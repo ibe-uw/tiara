@@ -6,10 +6,7 @@ from Bio.SeqIO.FastaIO import SimpleFastaParser
 from tqdm import tqdm
 from joblib import Parallel, delayed
 
-with warnings.catch_warnings():
-    # Temporary, until skorch fixes importing from sklearn.scorer.metrics, which raises FutureWarning
-    warnings.simplefilter("ignore")
-    from skorch import NeuralNetClassifier
+from skorch import NeuralNetClassifier
 import torch
 
 from tiara.src.prediction import Prediction, SingleResult

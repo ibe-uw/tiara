@@ -7,11 +7,7 @@ from contextlib import contextmanager
 import time
 
 import numpy as np
-
-with warnings.catch_warnings():
-    # Temporary, until skorch fixes importing from sklearn.scorer.metrics, which raises FutureWarning
-    warnings.simplefilter("ignore")
-    from skorch.dataset import Dataset
+from skorch.dataset import Dataset
 
 classes_list = [
     ["organelle", "bacteria", "archaea", "eukarya", "unknown"],
