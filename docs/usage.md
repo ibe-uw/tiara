@@ -67,7 +67,10 @@ The basic usage would be:
 ```python
 >>> from tiara import TfidfWeighter
 
-# k means kmer length
+# to read some more documentation
+>>> help(TfidfWeighter)
+
+# k means k-mer length
 # sequences longer than fragment_len will be splitted to fragments
 # so they will be treated as separate words in tf-idf
 >>> tfidf = TfidfWeighter(k=5, fragment_len=5000)
