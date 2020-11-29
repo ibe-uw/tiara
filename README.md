@@ -71,6 +71,8 @@ in the first and second stage of classification are set to 0.65 and 0.6, respect
 The probabilities of belonging to individual classes are also written to 
 `out.txt`, thanks to `--probabilities` option.
 
+For more usage examples, go [here](docs/usage.md).
+
  
  
 
