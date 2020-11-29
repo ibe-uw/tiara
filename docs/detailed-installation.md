@@ -17,14 +17,12 @@ Install Python >=3.7 version.
 ## **tiara** installation
 
 Now you can install **tiara** in your environment. There are three ways to handle dependencies:
-- You can install them by hand: in the `tiara-env` run `conda install numpy pytorch` 
+- You can install them by hand: in the `tiara-env` run `conda install numpy pytorch numba joblib` 
 and then `conda install -c conda-forge tqdm biopython skorch`.
 - You can let the setup.py script install them for you. 
 It could potentially cause problems with your conda environment though, 
 but if you use it only for **tiara**, everything should be fine. 
 If you choose this option, proceed to the next step.
-- You can simply run `pip install tiara --extra-index-url=https://test.pypi.org/simple/`
-(pip will automatically install the dependencies for you.)
 
 Now you can clone this repository, navigate to the directory containing setup.py and run it:
 

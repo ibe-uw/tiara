@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="tiara",
-    version="0.0.1",
+    version="1.0.0",
     description="A tool for classifying metagenomic data",
     author="Michał Karlicki and Stanisław Antonowicz",
     author_email="",
@@ -22,13 +22,13 @@ setuptools.setup(
     python_requires=">=3.7",
     keywords="machine-learning computational-biology",
     install_requires=[
-        "skorch",
-        "torch",
-        "biopython",
-        "numpy",
-        "tqdm",
-        "joblib",
-        "numba",
+        "biopython~=1.78",
+        "joblib~=0.17.0",
+        "numba~=0.52.0rc3",
+        "numpy~=1.19.4",
+        "skorch~=0.9.0",
+        "torch~=1.7.0",
+        "tqdm~=4.54.0",
     ],
     include_package_data=True,
     entry_points={

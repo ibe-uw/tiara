@@ -38,12 +38,6 @@ python setup.py install
 ```
 This will install **tiara** in your Python environment.
 
-#### Using pip
-
-```bash
-pip install tiara --extra-index-url=https://test.pypi.org/simple/
-```
-
 #### Testing the installation
 
 After the installation, run `tiara-test` to test if the installation was successful.

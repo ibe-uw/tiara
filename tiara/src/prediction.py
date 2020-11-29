@@ -1,10 +1,7 @@
 from typing import Tuple, Dict, List
 import warnings
 
-with warnings.catch_warnings():
-    # Temporary, until skorch fixes importing from sklearn.scorer.metrics, which raises FutureWarning
-    warnings.simplefilter("ignore")
-    from skorch import NeuralNetClassifier
+from skorch import NeuralNetClassifier
 import numpy as np
 
 from tiara.src.utilities import chop, SingleResult
