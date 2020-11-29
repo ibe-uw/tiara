@@ -1,0 +1,6 @@
+k:6
+fragment_len:5000
+verbose:True
+smooth:True
+N:1023512
+data_names:data/mitochondria,data/plastids,data/bacteria,data/eukarya,data/archea

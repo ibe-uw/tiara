@@ -1,0 +1,31 @@
+First iteration statistics:
+	bacteria: 156
+
+
+
+Models used:
+	Tf-idf:
+		/Users/ant/Library/Caches/Python-Eggs/tiara-0.0.1-py3.8.egg-tmp/tiara/models/tfidf-models/k6-first-stage
+		/Users/ant/Library/Caches/Python-Eggs/tiara-0.0.1-py3.8.egg-tmp/tiara/models/tfidf-models/k7-second-stage
+	Neural net weights:
+		/Users/ant/Library/Caches/Python-Eggs/tiara-0.0.1-py3.8.egg-tmp/tiara/models/nnet-models/first_nnet_kmer_6.pkl
+		/Users/ant/Library/Caches/Python-Eggs/tiara-0.0.1-py3.8.egg-tmp/tiara/models/nnet-models/second_nnet_kmer_7.pkl
+	Hyperparameters:
+		Stage 0:
+			fname: first_nnet_kmer_6.pkl
+			k: 6
+			hidden_1: 2048
+			hidden_2: 1024
+			dropout: 0.2
+			prob_cutoff: 0.65
+			fragment_len: 5000
+			dim_out: 5
+		Stage 1:
+			fname: second_nnet_kmer_7.pkl
+			k: 7
+			hidden_1: 128
+			hidden_2: 64
+			dropout: 0.2
+			prob_cutoff: 0.65
+			fragment_len: 5000
+			dim_out: 3
