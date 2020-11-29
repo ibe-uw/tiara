@@ -49,6 +49,9 @@ written to `out.txt`, thanks to `--probabilities` option.
 - `-t THREADS`, `--threads THREADS` Number of threads used.
 - `--probabilities`, `--pr` Whether to write probabilities of individual classes for each sequence.
 - `-v`, `--verbose` Whether to display some additional messages and progress bar during classification.
+##### Advanced options
+- `--first_stage_kmer`, `--k1` k-mer length used in the first stage of classification. Default: 6.
+- `--second_stage_kmer`, `--k2` k-mer length used in the second stage of classification. Default: 7.
 
 ### Using **tiara** as a package
 
