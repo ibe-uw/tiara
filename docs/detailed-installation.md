@@ -27,8 +27,8 @@ If you choose this option, proceed to the next step.
 Now you can clone this repository, navigate to the directory containing setup.py and run it:
 
 ```bash
-git clone https://gitlab.com/victiln/stanislaw_deepplasthunter.git # do zmiany
-cd stanislaw_deepplasthunter
+git clone https://github.com/ibe-uw/tiara.git
+cd tiara
 python setup.py install
 ```
 

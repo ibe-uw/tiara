@@ -32,15 +32,15 @@ More detailed installation instructions can be found [here](docs/detailed-instal
 #### Using setup.py
 
 ```bash
-git clone https://gitlab.com/victiln/stanislaw_deepplasthunter.git
-cd stanislaw_deepplasthunter
+git clone https://github.com/ibe-uw/tiara.git
+cd tiara
 python setup.py install
 ```
 This will install **tiara** in your Python environment.
 
 #### Testing the installation
 
-After the installation, run `tiara-test` to test if the installation was successful.
+After the installation, run `tiara-test` to see if the installation was successful.
 
 ## Usage
 
