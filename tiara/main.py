@@ -134,7 +134,7 @@ def main(test=None):
         print(prepare_statistics(results))
         if args.output:
             directory, fname = os.path.split(args.output)
-            if not os.path.exists(directory):
+            if not os.path.exists(directory) and directory:
                 os.makedirs(directory)
             with open(args.output, "w") as target:
                 target.write(output)
