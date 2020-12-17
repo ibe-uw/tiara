@@ -1,4 +1,4 @@
-# Eukaryotic MAGs recovery using Tiara.
+# Eukaryotic MAGs recovery using Tiara
 
 Below we present list of instructions that lead to eukaryotic genomes from metagenomes.  
 
