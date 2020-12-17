@@ -1,44 +1,55 @@
-# tiara
+# Tiara
 
-
-**tiara** - a tool for DNA sequence classification.
-
-Classifies sequences to seven classes: 
-- archea
-- bacteria
-- prokarya (if it's not possible to differentiate between archea and bacteria)
-- eukarya
-- mitochondria
-- plastids
-- unknown
+Deep-learning-based approach for identification of eukaryotic sequences in the metagenomic data powered by PyTorch.  
 
 The sequences are classified in two stages:
+
 - In the first stage, the sequences are classified to classes 
-      archea, bacteria, prokarya, eukarya, organelle and unknown.
+      archaea, bacteria, prokarya, eukarya, organelle and unknown.
 - In the second stage, the sequences labeled as organelle in the first stage 
       are classified to either mitochondria, plastid or unknown.
 
-For more information on the methods used, please refer to *link do pracy*.
+For more information on the methods used, please refer to <here link to the paper> .
+
+## Installation
 
 ### Requirements
 
 - `Python >= 3.7`
 - `numpy, biopython, torch, skorch, tqdm`
 
-### Installation
+### Quick installation
 
-Installation instructions can be found [here](docs/detailed-installation.md).
+Detailed instructions can be found [here](docs/detailed-installation.md).
 
-### Usage
+#### Using setup.py
+
+```bash
+git clone https://gitlab.com/victiln/stanislaw_deepplasthunter.git
+cd stanislaw_deepplasthunter
+python setup.py install
+```
+
+This will install **tiara** in your Python environment.
+
+## Usages
 
 Sample usage can be found [here](docs/usage.md).
 
 ### Sample pipelines
 
-Here we describe some metagenomic pipelines that utilize **tiara**. 
-- [Assembling eukaryotic genomes](eukaryotic_pipeline.md)
-- [Extracting organellar genomes](organellar_pipeline.md)
+Here we describe some pipelines to tackle metagenomic data that utilize **tiara**. 
+- [Eukaryotic MAGs recovery](eukaryotic_pipeline.md)
+- [Organellar fraction recovery](organellar_pipeline.md)
 - [Extracting prokaryotic fraction](prokaryotic_pipeline.md)
+
+## Citing Tiara
+
+
+
+## License
+
+Tiara is released under an open-source MIT license 
 
 ### Name
 
@@ -48,3 +59,4 @@ We thought that it's an appropriate name for a software which classifies
 sequences to different taxonomic units. In English the word *tiara* usually 
 refers to a papal tiara. A papal tiara has three crowns, and life has three domains,
 so maybe that's another explanation for the name of our program.
+

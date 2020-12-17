@@ -1,19 +1,10 @@
-# tiara 
+# Tiara 
 
-
-**tiara** - a tool for DNA sequence classification.
-
-Classifies sequences to seven classes: 
-- archea
-- bacteria
-- prokarya (if it's not possible to differentiate between archea and bacteria)
-- eukarya
-- mitochondria
-- plastids
-- unknown
+Deep-learning-based approach for identification of eukaryotic sequences in the metagenomic data powered by PyTorch.  
 
 The sequences are classified in two stages:
-- In the first stage, the sequences are classified to classes 
+
+- In the first stage, the sequences are classified to classes: 
       archea, bacteria, prokarya, eukarya, organelle and unknown.
 - In the second stage, the sequences labeled as organelle in the first stage 
       are classified to either mitochondria, plastid or unknown.
@@ -49,19 +40,20 @@ After the installation, run `tiara-test` to see if the installation was successf
 tiara -i sample_input.fasta -o out.txt
 ```
 
-The sequences in the fasta file should be at least 5000 bases long.
+The sequences in the fasta file should be at least 3000 bases long. We do not recommend classify sequences that are shorter than 1000 base pairs.
 
 It creates two files: 
+
  - out.txt, a tab-separated file with header `sequence id, first stage classification result, second stage classification result`.
  - log_out.txt, containing model parameters and classification summary.
- 
+
 #### Advanced:
 
 ```bash
 tiara -i sample_input.fasta -o out.txt --tf mit pla pro -t 4 -p 0.65 0.60 --probabilities
 ```
 
-In addition to creating the files above, it crates, in the folder where `deepplasthunter` is run,
+In addition to creating the files above, it creates, in the folder where `tiara` is run,
 three files containing sequences from `sample_input.fasta` classified as 
 mitochondria, plastid and prokarya (`--tf mit pla pro` option).
 
@@ -73,8 +65,20 @@ The probabilities of belonging to individual classes are also written to
 
 For more usage examples, go [here](docs/usage.md).
 
- 
- 
+## Citation 
+
+## License
+
+Tiara is released under an open-source MIT license 
+
+
+
+
+
+
+
+
+
 
 
 

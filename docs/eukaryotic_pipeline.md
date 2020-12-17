@@ -1,9 +1,6 @@
-# Eukaryotic nuclear genomes extraction
+# Eukaryotic MAGs recovery using Tiara.
 
-
-If you want to extract eukaryotic MAGs (Metagenome assembled genomes) from metagenomic data, 
-we have a pipeline presented below. The best way to reduce the complexity of metagenomic data is 
-to isolate the eukaryotic fraction.
+Below we present list of instructions that lead to eukaryotic genomes from metagenomes.  
 
 ### The pipeline
 
@@ -12,21 +9,16 @@ to isolate the eukaryotic fraction.
 3. Extract reads that map to organellar fraction (you can skip this step).
 4. Assemble again using Spades (you can skip this step).
 5. Map reads to get the information about the of coverage of your fragments.
-6. Bin the reads using suitable software (metabat2/concoot).
-7. Estimate the genome completness using Busco.
-8. Further process eukaryotic MAGs. You can use MetaEuk for instance.
+6. Bin the reads using suitable software (using for example concoot).
+7. Also, you can use Anvi'O package for manual bin refinement.
+
+sAfter that you can start analyzing your newly identified genome. The bin completness can be estimated using Busco, also we recommend to use MetaEuk for gene prediction.  
 
 
 #### Unknowns
-To maximize completeness of your MAGs we highly recommend to add contigs of unknown origin to the process. 
-
-We are aware of (low complex, high diverse regions, small reference from microbial eukaryotes). # redakcja
-
-Even though possible prokaryotic contaminants should form separate bins. 
+To maximize completeness of your MAGs we highly recommend to add contigs of unknown origin to the process. The prokaryotic and viral sequences which might end up in the class “unknown” can be easily removed during preprocessing step like binning and bin refinement. 
 
 #### Organelles 
-The organellar fractions could improve the quality of assembly.
-The reason is that there exist multiple transfers of genes from plastids to nucleus.
-
+Adding organellar fraction can improve the quality of assembly. The reason is that there exist multiple transfers of genes from plastids to nucleus. 
 
 [Back to README](README.md)

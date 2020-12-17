@@ -1,21 +1,17 @@
-# Organellar genomes extraction
+# Organellar fraction recovery using Tiara
 
-The goal of this pipeline is to extract the organellar fraction (mitochondria and/or plastids) 
-from (meta)genomic datasets and then to assemble complete organellar genomes,
-which would be used for phylogenomic analyses. 
-
-Unfortunately, organellar fraction is minority in metagenomic data, which results in low coverage and short contigs.
-To overcome that we propose to separate organellar fraction and process them separately using following pipeline:
+Here we present pipeline for analyzing organellar fraction from metagenomes. In the best case using this pipeline it is possible to recover partially complete plastid and mitochondrial genomes. 
 
 ### The pipeline
 
 1. Classify assembled contigs with **tiara**. 
-2. Take the organellar fraction.
+2. Take the organellar fraction (with or without unkowns)
 3. Extract reads that map to organellar fraction.
-4. Assemble the reads again using Spades.
-5. Bin them using suitable software (metabat2/concoot). # we need to check if it works
+4. Assemble the reads again using metSpades.
+5. Bin them using suitable software (like metabat2 or concoot). 
 6. Use **tiara** again for separate mitochondrions from plastids.
-7. Further annotate organellar MAGs. 
+
+After that you can manually annotate formed MAGs. 
 
 
 

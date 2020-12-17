@@ -11,13 +11,12 @@ assuming that you've named the environment `tiara-env`.
 tiara -i sample_input.fasta -o out.txt
 ```
 
-The sequences in the fasta file should be at least 5000 bases long, 
-but you could get some meaningful results with shorter ones.
+The sequences in the fasta file should be at least 3000 bases long. We do not recommend classify sequences that are shorter than 1000 base pairs.
 
 It creates two files: 
  - out.txt, a tab-separated file with header `sequence id, first stage classification result, second stage classification result`.
  - log_out.txt, containing model parameters and classification summary.
- 
+
 ### Advanced:
 
 ```bash

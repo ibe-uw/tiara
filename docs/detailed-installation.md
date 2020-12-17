@@ -14,7 +14,7 @@ Install Python >=3.7 version.
     ```
 3. After the environment is crated, run `conda activate tiara-env`.
 
-## **tiara** installation
+## **Tiara** installation
 
 Now you can install **tiara** in your environment. There are three ways to handle dependencies:
 - You can install them by hand: in the `tiara-env` run `conda install numpy pytorch numba joblib` 
