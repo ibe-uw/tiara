@@ -1,6 +1,6 @@
 # Tiara 
 
-Deep-learning-based approach for identification of eukaryotic sequences in the metagenomic data powered by [PyTorch] (https://pytorch.org).  
+Deep-learning-based approach for identification of eukaryotic sequences in the metagenomic data powered by [PyTorch](https://pytorch.org).  
 
 The sequences are classified in two stages:
 
