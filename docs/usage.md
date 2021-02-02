@@ -11,7 +11,7 @@ assuming that you've named the environment `tiara-env`.
 tiara -i sample_input.fasta -o out.txt
 ```
 
-The sequences in the fasta file should be at least 3000 bases long. We do not recommend classify sequences that are shorter than 1000 base pairs.
+The sequences in the fasta file should be at least 3000 bases long (default value). We do not recommend classify sequences that are shorter than 1000 base pairs.
 
 It creates two files: 
  - out.txt, a tab-separated file with header `sequence id, first stage classification result, second stage classification result`.
@@ -23,7 +23,7 @@ It creates two files:
 tiara -i sample_input.fasta -o out.txt --tf mit pla pro -t 4 -p 0.65 0.60 --probabilities
 ```
 
-In addition to creating the files above, it crates, in the folder where `tiara` is run,
+In addition to creating the files above, it creates, in the folder where `tiara` is run,
 three files containing sequences from `sample_input.fasta` classified as 
 mitochondria, plastid and prokarya (`--tf mit pla pro` option).
 
@@ -37,7 +37,7 @@ written to `out.txt`, thanks to `--probabilities` option.
 
 - `-i input`, `--input input` A path to an input fasta file.
 - `-o output`, `--output output` A path to output file. If not provided, the result is printed to stdout.
-- `-m MIN_LEN`, `--min_len MIN_LEN` Minimum length of a sequence. Default: 5000.
+- `-m MIN_LEN`, `--min_len MIN_LEN` Minimum length of a sequence. Default: 3000.
 - `-p cutoff [cutoff ...]`, `--prob_cutoff cutoff [cutoff ...]` Probability threshold needed for classification to a class.
     If two floats are provided, the first is used in a first stage, the second in the second stage
     Default: `[0.65, 0.65]`.
