@@ -33,7 +33,7 @@ in the first and second stage of classification are set to 0.65 and 0.6, respect
 The probabilities of belonging to individual classes are also 
 written to `out.txt`, thanks to `--probabilities` option.
 
-### Program options
+### Program options (any order is fine)
 
 - `-i input`, `--input input` A path to an input fasta file.
 - `-o output`, `--output output` A path to output file. If not provided, the result is printed to stdout.
