@@ -2,7 +2,7 @@ import argparse
 import sys
 from collections import Counter
 
-minimum_sequence_length = 5000
+minimum_sequence_length = 3000
 default_prob_cutoff = [0.65, 0.65]
 short_mapping = {
     "mit": "mitochondrion",
