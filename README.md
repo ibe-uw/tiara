@@ -1,6 +1,6 @@
 # Tiara 
 
-Deep-learning-based approach for identification of eukaryotic sequences in the metagenomic data powered by PyTorch.  
+Deep-learning-based approach for identification of eukaryotic sequences in the metagenomic data powered by [PyTorch] (https://pytorch.org).  
 
 The sequences are classified in two stages:
 
@@ -40,7 +40,7 @@ After the installation, run `tiara-test` to see if the installation was successf
 tiara -i sample_input.fasta -o out.txt
 ```
 
-The sequences in the fasta file should be at least 3000 bases long. We do not recommend classify sequences that are shorter than 1000 base pairs.
+The sequences in the fasta file should be at least 3000 bases long (default value). We do not recommend classify sequences that are shorter than 1000 base pairs.
 
 It creates two files: 
 
