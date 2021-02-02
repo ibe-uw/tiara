@@ -5,14 +5,21 @@ Here we present pipeline for analyzing organellar fraction from metagenomes. In 
 ### The pipeline
 
 1. Classify assembled contigs with **tiara**. 
-2. Take the organellar fraction (with or without unkowns)
+2. Take the organellar fraction with or without unkowns
 3. Extract reads that map to organellar fraction.
-4. Assemble the reads again using metSpades.
+4. Assemble the reads again using metaSpades.
 5. Bin them using suitable software (like metabat2 or concoot). 
 6. Use **tiara** again for separate mitochondrions from plastids.
 
 After that you can manually annotate formed MAGs. 
 
+#### Minimum sequence length
+
+If you are trying identify parts of organellar genomes of rare micro eukaryotes you can decrease cut-off to 1kb in your run (at the expense of the increase of false positives). 
+
+#### Unknowns
+
+To maximize sensitivity of identification organells, you may consider to add this fraction to your analysis.  Other sequences which might end up in the class 'unknowns' can be easily removed during preprocessing step like binning and bin refinement.
 
 
 [Back to README](README.md)
