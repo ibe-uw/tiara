@@ -5,7 +5,7 @@ Deep-learning-based approach for identification of eukaryotic sequences in the m
 The sequences are classified in two stages:
 
 - In the first stage, the sequences are classified to classes: 
-      archea, bacteria, prokarya, eukarya, organelle and unknown.
+      archaea, bacteria, prokarya, eukarya, organelle and unknown.
 - In the second stage, the sequences labeled as organelle in the first stage 
       are classified to either mitochondria, plastid or unknown.
 
