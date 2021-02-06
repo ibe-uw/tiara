@@ -43,19 +43,15 @@ second_nnet_kmer_to_params = {
 classes_list = ["org", "bac", "arc", "euk", "unk1", "pla", "unk2", "mit"]
 
 
-description = """tiara - a tool for nucleotide sequence classification.
+description = """tiara - a deep-learning-based approach for identification of eukaryotic sequences 
+in the metagenomic data powered by PyTorch.  
 
-Classifies sequences to six classes: archea, bacteria, prokarya 
-(if it's not possible to differentiate between archaea and bacteria), 
-eukarya, mitochondria and plastid, plus an 'unknown' class.
+The sequences are classified in two stages:
 
-The classification is performed in two stages:
-    - In the first stage, the sequences are classified to classes 
-      archaea, bacteria, prokarya, eukarya and organelle (plus an 'unknown' class).
-    - In the second stage, the sequences labeled as organelle in the first stage 
+- In the first stage, the sequences are classified to classes: 
+      archaea, bacteria, prokarya, eukarya, organelle and unknown.
+- In the second stage, the sequences labeled as organelle in the first stage 
       are classified to either mitochondria, plastid or unknown.
-
-For more information, please refer to <link do pracy> or <link do githuba>. 
 """
 
 
@@ -187,7 +183,8 @@ def prepare_statistics(results):
             f"\t{_cls}: {count}\n"
             for _cls, count in sorted(
                 snd_iteration_statistics.items(), key=lambda x: x[0]
-            ) if _cls != "n/a"
+            )
+            if _cls != "n/a"
         )
     return log
 
