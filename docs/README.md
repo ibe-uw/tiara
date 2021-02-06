@@ -20,7 +20,7 @@ For more information on the methods used, please refer to <here link to the pape
 
 ### Quick installation
 
-Detailed instructions can be found [here](docs/detailed-installation.md).
+Detailed instructions can be found [here](detailed-installation.md).
 
 #### Using setup.py
 
@@ -34,7 +34,7 @@ This will install **tiara** in your Python environment.
 
 ## Usages
 
-Sample usage can be found [here](docs/usage.md).
+Sample usage can be found [here](usage.md).
 
 ### Sample pipelines
 
