@@ -3,6 +3,9 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+with open("requirements.txt") as fh:
+    requirements = fh.readlines()
+
 setuptools.setup(
     name="tiara",
     version="1.0.0",
@@ -21,15 +24,7 @@ setuptools.setup(
     ],
     python_requires=">=3.7",
     keywords="machine-learning computational-biology",
-    install_requires=[
-        "biopython~=1.78",
-        "joblib~=0.17.0",
-        "numba~=0.52.0rc3",
-        "numpy~=1.19.4",
-        "skorch~=0.9.0",
-        "torch~=1.7.0",
-        "tqdm~=4.54.0",
-    ],
+    install_requires=requirements,
     include_package_data=True,
     entry_points={
         "console_scripts": ["tiara=tiara.main:main", "tiara-test=tiara.test.test:test",]

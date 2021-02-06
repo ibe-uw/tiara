@@ -88,7 +88,8 @@ The basic usage would be:
 >>> tfidf = TfidfWeighter.load_params("model_directory")
 ```
 
-There are also a couple of functions which perform the oligonucleotide frequence of a sequence or a set of sequences.
+There are also a couple of functions which calculate 
+the oligonucleotide frequency of a sequence or a set of sequences.
 
 ```python
 >>> from tiara import oligofreq, single_oligofreq, multiple_oligofreq

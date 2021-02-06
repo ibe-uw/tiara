@@ -25,8 +25,8 @@ Detailed instructions can be found [here](docs/detailed-installation.md).
 #### Using setup.py
 
 ```bash
-git clone https://gitlab.com/victiln/stanislaw_deepplasthunter.git
-cd stanislaw_deepplasthunter
+git clone https://github.com/ibe-uw/tiara.git
+cd tiara
 python setup.py install
 ```
 
