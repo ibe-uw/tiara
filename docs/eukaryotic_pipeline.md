@@ -8,16 +8,21 @@ Below we present list of instructions that lead to eukaryotic genomes from metag
 2. Take eukaryotic fraction *and* the [unknowns](#unknowns) (and you can also add [organelles](#organelles)).
 3. Extract reads that map to selected fraction (you can skip this step).
 4. Assemble again using metaSpades (you can skip this step).
-5. Map reads to the selected contigs get the information about the coverage.
+5. Map reads to the selected contigs to get the information about the coverage.
 6. Bin the reads using suitable software (using for example concoot).
 7. Also, you can use Anvi'O package for manual bin refinement.
 
-After that you can start analyzing your newly identified genome. The bin completness can be estimated using Busco, also we recommend to use MetaEuk for gene prediction.  
+After that you can start analyzing your newly identified genome. 
+The bin completness can be estimated using Busco, also we recommend to use MetaEuk for gene prediction.  
 
 #### Unknowns
-To maximize completeness of your MAGs we highly recommend to add contigs of unknown origin to the process. The prokaryotic and viral sequences which might end up in the class “unknown” can be easily removed during preprocessing step like binning and bin refinement. 
+To maximize completeness of your MAGs we highly recommend to add contigs 
+of unknown origin to the process. The prokaryotic and viral sequences 
+which might end up in the class “unknown” can be easily removed 
+during preprocessing step like binning and bin refinement. 
 
 #### Organelles 
-Adding organellar fraction can improve the quality of assembly. The reason is that there exist multiple transfers of genes from plastids to nucleus. 
+Adding organellar fraction can improve the quality of assembly. 
+The reason is that there exist multiple transfers of genes from plastids to nucleus. 
 
 [Back to README](README.md)
