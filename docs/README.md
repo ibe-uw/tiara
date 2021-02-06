@@ -9,8 +9,6 @@ The sequences are classified in two stages:
 - In the second stage, the sequences labeled as organelle in the first stage 
       are classified to either mitochondria, plastid or unknown.
 
-For more information on the methods used, please refer to <here link to the paper> .
-
 ## Installation
 
 ### Requirements
@@ -32,7 +30,7 @@ python setup.py install
 
 This will install **tiara** in your Python environment.
 
-## Usages
+## Usage
 
 Sample usage can be found [here](usage.md).
 
