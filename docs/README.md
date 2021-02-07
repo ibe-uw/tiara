@@ -14,7 +14,7 @@ The sequences are classified in two stages:
 ### Requirements
 
 - `Python >= 3.7`
-- `numpy, biopython, torch, skorch, tqdm`
+- `numpy, biopython, torch, skorch, tqdm, joblib, numba`
 
 ### Quick installation
 
