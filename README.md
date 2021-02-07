@@ -19,14 +19,26 @@ The sequences are classified in two stages:
 
 More detailed installation instructions can be found [here](docs/detailed-installation.md).
 
+#### Using `pip`
+
+Run `pip install tiara`, preferably in a fresh environment.
+
 #### Using setup.py
+
+##### Latest stable release
+
+- Download latest release from https://github.com/ibe-uw/tiara/releases.
+- Unzip/untar the archive.
+- Go to the directory.
+- Run `python setup.py install`.
+
+##### Latest developer version
 
 ```bash
 git clone https://github.com/ibe-uw/tiara.git
 cd tiara
 python setup.py install
 ```
-This will install **tiara** in your Python environment.
 
 #### Testing the installation
 

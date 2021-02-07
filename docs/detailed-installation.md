@@ -20,6 +20,12 @@ but it should be a fresh one.
 
 ## **Tiara** installation
 
+### Using `pip`
+
+Run `pip install tiara`, preferably in a fresh environment.
+
+### Using `setup.py`
+
 Now you can install **tiara** in your environment. There are two ways to handle dependencies:
 - You can install them by hand: in the `tiara-env` run `conda install numpy pytorch numba joblib` 
 and then `conda install -c conda-forge tqdm biopython skorch`. 
@@ -28,7 +34,8 @@ and then `conda install -c conda-forge tqdm biopython skorch`.
 It could potentially cause problems with your conda environment though, 
 but if you use it only for **tiara**, everything should be fine. This is a recommended option.
 
-Now you can clone this repository, navigate to the directory containing setup.py and run it:
+Now you can either clone https://github.com/ibe-uw/tiara.git or download the latest release from 
+https://github.com/ibe-uw/tiara/releases, navigate to the directory containing setup.py and run it:
 
 ```bash
 git clone https://github.com/ibe-uw/tiara.git
