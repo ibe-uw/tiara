@@ -8,10 +8,10 @@ with open("requirements.txt") as fh:
 
 setuptools.setup(
     name="tiara",
-    version="1.0.0",
+    version="1.0.1",
     description="A tool for classifying metagenomic data",
     author="Michał Karlicki and Stanisław Antonowicz",
-    author_email="",
+    author_email="stas.antonowicz@gmail.com",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://ibe-uw.github.io/tiara/",
