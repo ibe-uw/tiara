@@ -1,4 +1,4 @@
-# [Tiara](ibe-uw.github.io/tiara/)
+# [Tiara](https://ibe-uw.github.io/tiara/)
 
 Deep-learning-based approach for identification of eukaryotic sequences in the metagenomic data powered by [PyTorch](https://pytorch.org).  
 
