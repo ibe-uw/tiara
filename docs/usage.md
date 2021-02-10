@@ -11,7 +11,8 @@ assuming that you've named the environment `tiara-env`.
 tiara -i sample_input.fasta -o out.txt
 ```
 
-The sequences in the fasta file should be at least 3000 bases long (default value). We do not recommend classify sequences that are shorter than 1000 base pairs.
+The sequences in the fasta file should be at least 3000 bases long (default value). We do not recommend classifying 
+sequences shorter than 1000 base pairs.
 
 It creates two files: 
  - out.txt, a tab-separated file with header `sequence id, first stage classification result, second stage classification result`.
@@ -49,8 +50,10 @@ written to `out.txt`, thanks to `--probabilities` option.
 - `--probabilities`, `--pr` Whether to write probabilities of individual classes for each sequence.
 - `-v`, `--verbose` Whether to display some additional messages and progress bar during classification.
 ##### Advanced options
-- `--first_stage_kmer`, `--k1` k-mer length used in the first stage of classification. Default: 6.
-- `--second_stage_kmer`, `--k2` k-mer length used in the second stage of classification. Default: 7.
+- `--first_stage_kmer`, `--k1` k-mer length used in the first stage of classification.
+ Default: 6. Available options: `4, 5, 6`.
+- `--second_stage_kmer`, `--k2` k-mer length used in the second stage of classification.
+Default: 7. Available options: `4, 5, 6, 7`.
 
 ### Using **tiara** as a package
 
