@@ -9,6 +9,8 @@ The sequences are classified in two stages:
 - In the second stage, the sequences labeled as organelle in the first stage 
       are classified to either mitochondria, plastid or unknown.
 
+For more information, please refer to our paper:
+[*Tiara: Deep learning-based classification system for eukaryotic sequences*](https://www.biorxiv.org/content/10.1101/2021.02.08.430199v1).
 
 ## Requirements
 
@@ -77,6 +79,8 @@ The probabilities of belonging to individual classes are also written to
 For more usage examples, go [here](docs/usage.md).
 
 ## Citation 
+
+https://doi.org/10.1101/2021.02.08.430199
 
 ## License
 

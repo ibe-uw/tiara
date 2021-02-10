@@ -9,6 +9,10 @@ The sequences are classified in two stages:
 - In the second stage, the sequences labeled as organelle in the first stage 
       are classified to either mitochondria, plastid or unknown.
 
+For more information, please refer to our paper:
+[*Tiara: Deep learning-based classification system for eukaryotic sequences*](https://www.biorxiv.org/content/10.1101/2021.02.08.430199v1).
+
+
 ## Installation
 
 ### Requirements
@@ -54,7 +58,7 @@ Here we describe some pipelines to tackle metagenomic data that utilize **tiara*
 
 ## Citing Tiara
 
-
+https://doi.org/10.1101/2021.02.08.430199
 
 ## License
 
