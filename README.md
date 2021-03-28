@@ -86,6 +86,12 @@ https://doi.org/10.1101/2021.02.08.430199
 
 Tiara is released under an open-source MIT license 
 
+### Version history:
+
+- `1.0.2` – added Python 3.9 compatibility, added an option to gzip the results. 
+  Added this README section.
+- `1.0.0`, `1.0.1` – initial releases.
+
 
 
 
