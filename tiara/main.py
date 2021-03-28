@@ -1,6 +1,8 @@
 import argparse
 import sys
 from collections import Counter
+import gzip
+
 
 minimum_sequence_length = 3000
 default_prob_cutoff = [0.65, 0.65]
@@ -132,12 +134,22 @@ def main(test=None):
             directory, fname = os.path.split(args.output)
             if not os.path.exists(directory) and directory:
                 os.makedirs(directory)
-            with open(args.output, "w") as target:
-                target.write(output)
-            print(f"Output saved to {args.output}.")
-            with open(os.path.join(directory, "log_" + fname), "w") as target:
-                target.write(log)
-            print(f"Log file saved to {os.path.join(directory, 'log_' + fname)}.")
+            if args.gzip:
+                with gzip.open(args.output + ".gz", "wt") as target:
+                    target.write(output)
+                print(f"Output saved to {args.output}.gz.")
+                with gzip.open(
+                    os.path.join(directory, "log_" + fname) + ".gz", "wt"
+                ) as target:
+                    target.write(log)
+                print(f"Log file saved to {os.path.join(directory, 'log_' + fname)}.gz.")
+            else:
+                with open(args.output, "w") as target:
+                    target.write(output)
+                print(f"Output saved to {args.output}.")
+                with open(os.path.join(directory, "log_" + fname), "w") as target:
+                    target.write(log)
+                print(f"Log file saved to {os.path.join(directory, 'log_' + fname)}.")
         else:
             print(output)
         if args.to_fasta:
@@ -154,8 +166,14 @@ def main(test=None):
             for cls in classes:
                 if grouped[short_mapping[cls]]:
                     fname = short_mapping[cls] + "_" + name
-                    with open(os.path.join(directory, fname), "w") as handle:
-                        write_to_fasta(handle, grouped[short_mapping[cls]])
+                    if args.gzip:
+                        with gzip.open(
+                            os.path.join(directory, fname) + ".gz", "wt"
+                        ) as handle:
+                            write_to_fasta(handle, grouped[short_mapping[cls]])
+                    else:
+                        with open(os.path.join(directory, fname), "w") as handle:
+                            write_to_fasta(handle, grouped[short_mapping[cls]])
         print()
 
 
@@ -349,6 +367,13 @@ def parse_arguments():
         "--verbose",
         action="store_true",
         help="""Whether to display some additional messages and progress bar during classification.""",
+    )
+
+    parser.add_argument(
+        "--gzip",
+        "--gz",
+        action="store_true",
+        help="""Whether to gzip results or not.""",
     )
 
     return parser.parse_args(args=None if sys.argv[1:] else ["--help"])

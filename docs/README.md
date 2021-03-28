@@ -73,3 +73,9 @@ sequences to different taxonomic units. In English the word *tiara* usually
 refers to a papal tiara. A papal tiara has three crowns, and life has three domains,
 so maybe that's another explanation for the name of our program.
 
+### Version history:
+
+- `1.0.2` – added Python 3.9 compatibility, added an option to gzip the results. 
+  Added this README section.
+- `1.0.0`, `1.0.1` – initial releases.
+

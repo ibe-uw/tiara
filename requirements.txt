@@ -1,6 +1,6 @@
 biopython~=1.78
 joblib~=0.17.0
-numba~=0.52.0rc3
+numba>=0.52.0rc3
 numpy~=1.19.4
 skorch~=0.9.0
 torch~=1.7.0

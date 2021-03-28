@@ -49,6 +49,7 @@ written to `out.txt`, thanks to `--probabilities` option.
 - `-t THREADS`, `--threads THREADS` Number of threads used.
 - `--probabilities`, `--pr` Whether to write probabilities of individual classes for each sequence.
 - `-v`, `--verbose` Whether to display some additional messages and progress bar during classification.
+- `--gz`, `--gzip` gzip all program outputs (adds `.gz` extension to `-o`).
 ##### Advanced options
 - `--first_stage_kmer`, `--k1` k-mer length used in the first stage of classification.
  Default: 6. Available options: `4, 5, 6`.
@@ -92,7 +93,7 @@ The basic usage would be:
 ```
 
 There are also a couple of functions which calculate 
-the oligonucleotide frequency of a sequence or a set of sequences.
+the oligonucleotide frequency of a sequence, or a set of sequences.
 
 ```python
 >>> from tiara import oligofreq, single_oligofreq, multiple_oligofreq

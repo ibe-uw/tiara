@@ -22,7 +22,7 @@ class SingleResult:
     Parameters
     ----------
         cls - a list of classes (one entry per one stage of classification, e.g. ['organelle', 'plastid']
-        desc - sequence description taken form fasta file
+        desc - sequence description taken from fasta file
         seq - nucleotide sequence
         probs - a list of dictionaries mapping classes to probabilities assigned by the classifier
                 (one dictionary per stage of classification)
