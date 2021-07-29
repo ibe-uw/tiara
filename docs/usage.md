@@ -59,6 +59,12 @@ Default: 7. Available options: `4, 5, 6, 7`.
 
 ### Running training scripts
 
+First, clone and go to the repo:
+```bash
+git clone https://github.com/ibe-uw/tiara.git
+cd tiara
+```
+
 #### TF-IDF
 
 You can train your own TF-IDF models using a following command (run from the repo):
