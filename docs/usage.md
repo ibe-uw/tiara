@@ -55,6 +55,47 @@ written to `out.txt`, thanks to `--probabilities` option.
  Default: 6. Available options: `4, 5, 6`.
 - `--second_stage_kmer`, `--k2` k-mer length used in the second stage of classification.
 Default: 7. Available options: `4, 5, 6, 7`.
+  
+
+### Running training scripts
+
+#### TF-IDF
+
+You can train your own TF-IDF models using a following command (run from the repo):
+
+```bash
+python -m tiara.training.train_tfidf <direcory with input fasta files> <output directory>
+```
+
+Input fasta files have to include `archaea.fasta`, `eukarya.fasta`, 
+`mitochondria.fasta`, `plastids.fasta` and `bacteria.fasta`. 
+Editing the script to suit other needs should be easy.
+
+#### Training neural networks
+
+Run 
+```bash
+python -m tiara.training.train_models <input dir> <output dir> <n_cores>
+```
+This will produce models for best parameters for each k-mer length (`4-6` for the first stage, `4-7` for the second).
+The `<input dir>` has to have the same structure as the output dir.
+
+#### Hyperparameter search 
+
+The input fasta directory has to have two directories: `train` and `validation`. 
+Each one has to have either all types of inputs described above or only `mitochondria.fasta` and `plastids.fasta`,
+depending on the stage of classification.
+
+Hyperparameter search using the default TF-IDF models can be done calling:
+```bash
+python -m tiara.training.hyperparameter_search_first_stage <input dir> <output filename> <kmer length> <n_cores>
+```
+Similarly for `tiara.training.hyperparameter_search_second_stage`.
+
+The output file includes a confusion matrix and some statistics
+like accuracy, F1 etc calculated at the end of the default 50-epoch training.
+There is also additional file produced (with `histories_` prefix added), with statistics calculated after each epoch.
+
 
 ### Using **tiara** as a package
 
