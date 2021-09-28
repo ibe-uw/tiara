@@ -10,7 +10,11 @@ The sequences are classified in two stages:
       are classified to either mitochondria, plastid or unknown.
 
 For more information, please refer to our paper:
-[*Tiara: Deep learning-based classification system for eukaryotic sequences*](https://www.biorxiv.org/content/10.1101/2021.02.08.430199v1).
+[*Tiara: Deep learning-based classification system for eukaryotic sequences*](https://doi.org/10.1093/bioinformatics/btab672).
+
+[Supplementary data](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btab672/6375939#supplementary-data)
+
+[Supplementary sequences](data/Supplementary_sequences)
 
 ## Requirements
 
@@ -80,7 +84,7 @@ For more usage examples, go [here](docs/usage.md).
 
 ## Citation 
 
-https://doi.org/10.1101/2021.02.08.430199
+Karlicki, M., Antonowicz, S. & Karnkowska, A. Tiara: Deep learning-based classification system for eukaryotic sequences. Bioinformatics (2021). doi:10.1093/bioinformatics/btab672
 
 ## License
 
