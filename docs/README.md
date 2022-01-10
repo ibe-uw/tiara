@@ -2,6 +2,10 @@
 
 Deep-learning-based approach for identification of eukaryotic sequences in the metagenomic data powered by PyTorch.  
 
+<p align="center">
+      <img src="https://github.com/mkarlik93/images/blob/master/Tiara.png" width="75%" height="75%" position="center">
+</p>
+
 The sequences are classified in two stages:
 
 - In the first stage, the sequences are classified to classes 
@@ -10,7 +14,7 @@ The sequences are classified in two stages:
       are classified to either mitochondria, plastid or unknown.
 
 For more information, please refer to our paper:
-[*Tiara: Deep learning-based classification system for eukaryotic sequences*](https://www.biorxiv.org/content/10.1101/2021.02.08.430199v1).
+[*Tiara: Deep learning-based classification system for eukaryotic sequences*](https://academic.oup.com/bioinformatics/article/38/2/344/6375939).
 
 
 ## Installation
@@ -58,7 +62,7 @@ Here we describe some pipelines to tackle metagenomic data that utilize **tiara*
 
 ## Citing Tiara
 
-https://doi.org/10.1101/2021.02.08.430199
+Michał Karlicki, Stanisław Antonowicz, Anna Karnkowska, Tiara: deep learning-based classification system for eukaryotic sequences, Bioinformatics, Volume 38, Issue 2, 15 January 2022, Pages 344–350, https://doi.org/10.1093/bioinformatics/btab672
 
 ## License
 
