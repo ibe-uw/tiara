@@ -3,7 +3,7 @@
 Deep-learning-based approach for identification of eukaryotic sequences in the metagenomic data powered by PyTorch.  
 
 <p align="center">
-      <img src="https://github.com/mkarlik93/images/blob/master/Tiara.png" width="75%" height="75%" position="center">
+      <img src="img/Tiara.png" width="75%" height="75%" position="center">
 </p>
 
 The sequences are classified in two stages:
