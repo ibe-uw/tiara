@@ -84,7 +84,7 @@ For more usage examples, go [here](docs/usage.md).
 
 ## Citation 
 
-Karlicki, M., Antonowicz, S. & Karnkowska, A. Tiara: Deep learning-based classification system for eukaryotic sequences. Bioinformatics (2021). doi:10.1093/bioinformatics/btab672
+Michał Karlicki, Stanisław Antonowicz, Anna Karnkowska, Tiara: deep learning-based classification system for eukaryotic sequences, Bioinformatics, Volume 38, Issue 2, 15 January 2022, Pages 344–350, https://doi.org/10.1093/bioinformatics/btab672
 
 ## License
 
