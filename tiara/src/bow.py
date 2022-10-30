@@ -60,7 +60,7 @@ def single_oligofreq(sequence, k):
 
 @njit
 def calc_array(seqs, d, k):
-    result = np.zeros((len(seqs), 4 ** k), dtype=np.float32)
+    result = np.zeros((len(seqs), 4**k), dtype=np.float32)
     for i, seq in enumerate(seqs):
         for pos in range(len(seq) - k + 1):
             subseq = seq[pos : pos + k]

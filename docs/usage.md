@@ -36,7 +36,7 @@ written to `out.txt`, thanks to `--probabilities` option.
 
 ### Program options (any order is fine)
 
-- `-i input`, `--input input` A path to an input fasta file.
+- `-i input`, `--input input` A path to an input fasta file. Can be gzipped (identified by .gz suffix).
 - `-o output`, `--output output` A path to output file. If not provided, the result is printed to stdout.
 - `-m MIN_LEN`, `--min_len MIN_LEN` Minimum length of a sequence. Default: 3000.
 - `-p cutoff [cutoff ...]`, `--prob_cutoff cutoff [cutoff ...]` Probability threshold needed for classification to a class.

@@ -17,12 +17,13 @@ setuptools.setup(
     url="https://ibe-uw.github.io/tiara/",
     packages=setuptools.find_packages(),
     classifiers=[
+        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.7,<3.10",
     keywords="machine-learning computational-biology",
     install_requires=requirements,
-    include_package_data=True,
 )

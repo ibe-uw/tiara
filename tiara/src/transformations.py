@@ -14,6 +14,7 @@ from tiara.src.bow import single_oligofreq, multiple_oligofreq
 
 class TfidfWeighter:
     """A class performing bag-of-words and tf-idf weighting of nucleotide sequences."""
+
     def __init__(self, k: int, fragment_len: int, verbose=False, smooth=True) -> None:
         """A tf-idf weighter class.
 
@@ -66,14 +67,19 @@ class TfidfWeighter:
             fnames = data
         self.data_names = [fname.split(".")[0] for fname in fnames]
         if self.verbose:
-            print(f"Training tf-idf model on {self.data_names} files with kmer length {self.k}.")
+            print(
+                f"Training tf-idf model on {self.data_names} files with kmer length {self.k}."
+            )
         self.N = 0
         for i, fname in enumerate(fnames):
             if self.verbose:
                 print(f"Processing file {i+1} ({fname})")
             with open(fname, "r") as handle:
                 if self.verbose:
-                    sequences = tqdm.tqdm(enumerate(SimpleFastaParser(handle)), total=count_sequences(fname))
+                    sequences = tqdm.tqdm(
+                        enumerate(SimpleFastaParser(handle)),
+                        total=count_sequences(fname),
+                    )
                 else:
                     sequences = enumerate(SimpleFastaParser(handle))
                 for j, (_, sequence) in sequences:
@@ -166,9 +172,7 @@ class TfidfWeighter:
             handle.write(f"data_names:{','.join(self.data_names)}")
         print(f"Model parameters saved to: {fname} folder")
 
-    def transform(
-        self, data: Union[str, Iterable[str]]
-    ) -> np.ndarray:
+    def transform(self, data: Union[str, Iterable[str]]) -> np.ndarray:
         """Transform nucleotide sequences to tf-idf weighted bow representations
 
         Takes either a single sequence (string) or an iterable of them.

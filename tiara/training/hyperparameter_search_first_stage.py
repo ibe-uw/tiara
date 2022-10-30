@@ -35,7 +35,7 @@ def add_ones_matrix(mat, row, positions):
 
 def get_tfidf_repr(seqs, k, idf_vec):
     length = len(seqs)
-    result = np.zeros((length, 4 ** k), dtype=np.float32)
+    result = np.zeros((length, 4**k), dtype=np.float32)
     for i, seq in enumerate(seqs):
         arr = []
         for pos in range(len(seq) - k + 1):
@@ -95,7 +95,9 @@ for learning_rate in [0.1, 0.01, 0.001, 0.0001]:
         )
 
 
-tfidf_filepath = pkg_resources.resource_filename(__name__, f"../models/tfidf-models/k{k}-first-stage")
+tfidf_filepath = pkg_resources.resource_filename(
+    __name__, f"../models/tfidf-models/k{k}-first-stage"
+)
 
 tfidf = TfidfWeighter.load_params(tfidf_filepath)
 print("Started importing data")
@@ -163,7 +165,7 @@ valid_dataset = Dataset(val_X, val_y)
 train_X = train_X / np.linalg.norm(train_X, axis=1).reshape((-1, 1))
 val_X = val_X / np.linalg.norm(val_X, axis=1).reshape((-1, 1))
 
-dim_in = 4 ** k
+dim_in = 4**k
 dim_out = 5
 
 with open(sys.argv[1], "a") as handle:

@@ -142,7 +142,9 @@ def main(test=None):
                     os.path.join(directory, "log_" + fname) + ".gz", "wt"
                 ) as target:
                     target.write(log)
-                print(f"Log file saved to {os.path.join(directory, 'log_' + fname)}.gz.")
+                print(
+                    f"Log file saved to {os.path.join(directory, 'log_' + fname)}.gz."
+                )
             else:
                 with open(args.output, "w") as target:
                     target.write(output)
@@ -217,11 +219,17 @@ def perform_test():
 
     nnet_weights = [
         pkg_resources.resource_filename(__name__, "models/nnet-models/" + path)
-        for path in ["first_nnet_kmer_6.pkl", "second_nnet_kmer_7.pkl",]
+        for path in [
+            "first_nnet_kmer_6.pkl",
+            "second_nnet_kmer_7.pkl",
+        ]
     ]
     tfidfs = [
         pkg_resources.resource_filename(__name__, "models/tfidf-models/" + path)
-        for path in ["k6-first-stage", "k7-second-stage",]
+        for path in [
+            "k6-first-stage",
+            "k7-second-stage",
+        ]
     ]
     torch.set_num_threads(1)
     fragment_len = 5000
@@ -237,15 +245,18 @@ def perform_test():
     params[1]["dim_out"] = 3
     data_template = "test/test_data/"
     classifier = Classification(
-        min_len=fragment_len, nnet_weights=nnet_weights, params=params, tfidf=tfidfs,
+        min_len=fragment_len,
+        nnet_weights=nnet_weights,
+        params=params,
+        tfidf=tfidfs,
     )
     tests_passed = 0
     for i, source_dataset in enumerate(
-        "archaea bacteria eukarya mitochondria plast".split()
+        ["archaea", "bacteria", "eukarya", "mitochondria", "plast"]
     ):
-        print(f"Testing file {i + 1}/5: {source_dataset + '_fr.fasta'}")
+        print(f"Testing file {i + 1}/5: {source_dataset + '_fr.fasta.gz'}")
         fasta_fpath = pkg_resources.resource_filename(
-            __name__, data_template + source_dataset + "_fr.fasta"
+            __name__, data_template + source_dataset + "_fr.fasta.gz"
         )
         target_output_fpath = pkg_resources.resource_filename(
             __name__, data_template + source_dataset + "_out.txt"

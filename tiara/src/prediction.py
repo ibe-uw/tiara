@@ -99,7 +99,9 @@ class Prediction:
         self.tfidf = tnf
         self.transformer = transformer
 
-    def make_prediction(self, single_record: Tuple[str, str, np.ndarray]) -> SingleResult:
+    def make_prediction(
+        self, single_record: Tuple[str, str, np.ndarray]
+    ) -> SingleResult:
         """Make a prediction on a single sequence.
 
         The decision rule works as follows:

@@ -58,7 +58,7 @@ class TransformedDataset(Dataset):
         seqs = self.X[i]
         labels = self.y[i]
         X = np.array([self.transformer.transform(seq) for seq in seqs]).reshape(
-            (-1, 4 ** self.k)
+            (-1, 4**self.k)
         )
         return self.transform(X, labels)
 
@@ -160,7 +160,7 @@ def merge_results(
 @contextmanager
 def time_context_manager(label):
     """A context manager for timing.
-       Taken from David Beazley's slides on generators ('Generators: The Final Frontier')
+    Taken from David Beazley's slides on generators ('Generators: The Final Frontier')
     """
     start = time.time()
     try:
