@@ -8,7 +8,7 @@ with open("requirements.txt") as fh:
 
 setuptools.setup(
     name="tiara",
-    version="1.0.2",
+    version="1.0.3",
     description="A tool for classifying metagenomic data",
     author="Michał Karlicki and Stanisław Antonowicz",
     author_email="stas.antonowicz@gmail.com",
@@ -21,11 +21,8 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.7",
+    python_requires=">=3.7,<3.10",
     keywords="machine-learning computational-biology",
     install_requires=requirements,
     include_package_data=True,
-    entry_points={
-        "console_scripts": ["tiara=tiara.main:main", "tiara-test=tiara.test.test:test",]
-    },
 )

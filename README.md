@@ -92,7 +92,10 @@ Tiara is released under an open-source MIT license
 
 ### Version history:
 
-- `1.0.2` – added Python 3.9 compatibility, added an option to gzip the results. 
+- `1.0.3` – added `pyproject.toml`, updated dependencies to `python<3.10`
+ – unfortunately `tiara` doesn't work right now with 
+ `python` newer than `3.9` due to `torch 1.7.0` compatibility issues.
+- `1.0.2` – added `Python 3.9` compatibility, added an option to gzip the results. 
   Added this README section.
 - `1.0.0`, `1.0.1` – initial releases.
 

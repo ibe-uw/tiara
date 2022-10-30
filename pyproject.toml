@@ -1,0 +1,36 @@
+[project]
+name = "tiara"
+version = "1.0.3"
+authors = [
+  { name="Michał Karlicki" }, { name="Stanisław Antonowicz", email="stas.antonowicz@gmail.com" }
+]
+description = "A tool for classifying metagenomic data"
+readme = "README.md"
+requires-python = ">=3.7,<3.10"
+classifiers = [
+    "Programming Language :: Python :: 3.8",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["machine-learning", "computational-biology"]
+dependencies = [
+    "biopython~=1.78",
+    "joblib~=0.17.0",
+    "numba>=0.52.0rc3",
+    "numpy~=1.19.4",
+    "skorch~=0.9.0",
+    "torch~=1.7.0",
+    "tqdm~=4.54.0"
+]
+
+[project.scripts]
+tiara = "tiara.main:main"
+tiara-test = "tiara.test.test:test"
+
+[project.urls]
+"Homepage" = "https://ibe-uw.github.io/tiara/"
+"Bug Tracker" = "https://github.com/ibe-uw/tiara/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
