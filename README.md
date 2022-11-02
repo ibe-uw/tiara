@@ -18,7 +18,7 @@ For more information, please refer to our paper:
 
 ## Requirements
 
-- `Python >= 3.7`
+- `Python >= 3.7, <=3.9`
 - `numpy, biopython, torch, skorch, tqdm, joblib, numba`
 
 ## Installation
@@ -28,6 +28,14 @@ More detailed installation instructions can be found [here](docs/detailed-instal
 #### Using `pip`
 
 Run `pip install tiara`, preferably in a fresh environment.
+
+#### Using `conda`
+
+Run `conda install -c conda-forge tiara`, preferably in a fresh environment. 
+
+We recommend to use `mamba` instead of `conda` (it's faster).
+
+Unfortunately currently it does work only for python 3.7 and 3.8.
 
 #### Using setup.py
 

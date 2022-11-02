@@ -24,6 +24,14 @@ but it should be a fresh one.
 
 Run `pip install tiara`, preferably in a fresh environment.
 
+#### Using `conda`
+
+Run `conda install -c conda-forge tiara`, preferably in a fresh environment. 
+
+We recommend to use `mamba` instead of `conda` (it's faster).
+
+Unfortunately currently it does work only for python 3.7 and 3.8.
+
 ### Using `setup.py`
 
 Now you can install **tiara** in your environment. There are two ways to handle dependencies:
