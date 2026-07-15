@@ -162,7 +162,6 @@ def main(test=None):
                 directory = "."
             grouped = sort_type(results)
             _, name = os.path.split(args.input)
-            name = name.split(".")[0]
             if "all" in args.to_fasta:
                 classes = list(short_mapping.keys())
             else:
