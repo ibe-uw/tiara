@@ -1,3 +1,4 @@
+import re
 import argparse
 import sys
 from collections import Counter
@@ -110,6 +111,7 @@ def main(test=None):
             params=params,
             tfidf=tfidfs,
             threads=args.threads,
+            quality=args.quality
         )
         start_time = time.time()
         results = classifier.classify(args.input, args.verbose)
@@ -161,6 +163,13 @@ def main(test=None):
                 directory = "."
             grouped = sort_type(results)
             _, name = os.path.split(args.input)
+            
+            # Fix name extension
+            name = re.sub(r'\.gz$', '', name, flags=re.IGNORECASE)
+            if not args.quality:
+                name = re.sub(r'\.fq$', '.fa', name, flags=re.IGNORECASE)
+                name = re.sub(r'\.fastq$', '.fasta', name, flags=re.IGNORECASE)
+               
             if "all" in args.to_fasta:
                 classes = list(short_mapping.keys())
             else:
@@ -385,6 +394,13 @@ def parse_arguments():
         "--gz",
         action="store_true",
         help="""Whether to gzip results or not.""",
+    )
+
+    parser.add_argument(
+        "-q",
+        "--quality",
+        action="store_true",
+        help="""Wheter to export the input fastq quality value to the output""",
     )
 
     return parser.parse_args(args=None if sys.argv[1:] else ["--help"])

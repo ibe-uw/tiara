@@ -4,6 +4,7 @@ from dataclasses import dataclass
 import pickle
 import warnings
 from contextlib import contextmanager
+from typing import Optional
 import time
 
 import numpy as np
@@ -26,12 +27,14 @@ class SingleResult:
         seq - nucleotide sequence
         probs - a list of dictionaries mapping classes to probabilities assigned by the classifier
                 (one dictionary per stage of classification)
+        quality - fastq quality value of the sequence (optional)
     """
 
     cls: List[str]
     desc: str
     seq: str
     probs: List[Dict[str, float]]
+    quality: Optional[str] = None
 
     def generate_line(self, prob=False):
         """Generates one line of the output summarizing the result."""
@@ -63,10 +66,18 @@ class TransformedDataset(Dataset):
         return self.transform(X, labels)
 
 
+def is_fastq(filename: str):
+    return filename.lower().endswith((".fq.gz", ".fastq.gz", ".fq", ".fastq"))
+
+
 def write_to_fasta(handle, seqs: List[SingleResult]):
     for record in seqs:
-        handle.write(">" + record.desc + "\n")
+        handle.write(">" if record.quality is None else "@")
+        handle.write(record.desc + "\n")
         handle.write(record.seq + "\n")
+        if record.quality is not None:
+            handle.write("+\n")
+            handle.write(record.quality + "\n")
 
 
 def sort_type(results):

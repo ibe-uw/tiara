@@ -4,6 +4,7 @@ import warnings
 from contextlib import suppress
 
 from Bio.SeqIO.FastaIO import SimpleFastaParser
+from Bio.SeqIO.QualityIO import FastqGeneralIterator
 from tqdm import tqdm
 from joblib import Parallel, delayed
 
@@ -13,7 +14,7 @@ import torch
 from tiara.src.prediction import Prediction, SingleResult
 from tiara.src.models import NNet1, NNet2
 from tiara.src.transformations import Transformer, TfidfWeighter
-from tiara.src.utilities import parse_params, chop, time_context_manager
+from tiara.src.utilities import parse_params, chop, time_context_manager, is_fastq
 
 
 def fun(seq, layer, transformer, fragment_len):
@@ -40,6 +41,7 @@ class Classification:
         tfidf: List[str],
         threads: int = 1,
         models=(NNet1, NNet2),
+        quality: bool = False
     ):
         """Init method.
 
@@ -55,6 +57,7 @@ class Classification:
             models: an iterable of torch model classes describing model used
         """
         self.threads = threads
+        self.quality = quality
         self.params = [
             parse_params(param) if isinstance(param, str) else param for param in params
         ]
@@ -99,7 +102,7 @@ class Classification:
 
         Parameters
         ----------
-            sequences_fname : a path to fasta file to classify
+            sequences_fname : a path to fasta/fastq file to classify
 
         Returns
         -------
@@ -107,11 +110,20 @@ class Classification:
         """
         if sequences_fname.endswith(".gz"):
             with gzip.open(sequences_fname, "rt") as sequences_handle:
-                seqs = list(SimpleFastaParser(sequences_handle))
+                seqs = list(FastqGeneralIterator(sequences_handle) 
+                            if is_fastq(sequences_fname)
+                            else SimpleFastaParser(sequences_handle))
         else:
             with open(sequences_fname, "r") as sequences_handle:
-                seqs = list(SimpleFastaParser(sequences_handle))
+                seqs = list(FastqGeneralIterator(sequences_handle) 
+                            if is_fastq(sequences_fname)
+                            else SimpleFastaParser(sequences_handle))
         seqs = [x for x in seqs if len(x[1]) >= self.min_len]
+
+        # keep fastq quality value for export
+        desc_quality = None
+        if self.quality and is_fastq(sequences_fname):
+            desc_quality = {x[0] : x[2] for x in seqs}
 
         do = delayed(fun)
         executor = Parallel(n_jobs=self.threads)
@@ -197,4 +209,10 @@ class Classification:
                         probs=[fst.probs[0], snd.probs[1]],
                     )
                 )
+
+        # add fastq quality to prediction
+        if desc_quality is not None:
+            for prediction in predictions:
+                prediction.quality = desc_quality[prediction.desc]
+
         return predictions
