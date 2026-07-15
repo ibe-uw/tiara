@@ -1,3 +1,4 @@
+import re
 import argparse
 import sys
 from collections import Counter
@@ -162,6 +163,13 @@ def main(test=None):
                 directory = "."
             grouped = sort_type(results)
             _, name = os.path.split(args.input)
+            
+            # Fix name extension
+            name = re.sub(r'\.gz$', '', name, flags=re.IGNORECASE)
+            if not args.quality:
+                name = re.sub(r'\.fq$', '.fa', name, flags=re.IGNORECASE)
+                name = re.sub(r'\.fastq$', '.fasta', name, flags=re.IGNORECASE)
+               
             if "all" in args.to_fasta:
                 classes = list(short_mapping.keys())
             else:

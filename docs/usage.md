@@ -50,6 +50,7 @@ written to `out.txt`, thanks to `--probabilities` option.
 - `--probabilities`, `--pr` Whether to write probabilities of individual classes for each sequence.
 - `-v`, `--verbose` Whether to display some additional messages and progress bar during classification.
 - `--gz`, `--gzip` gzip all program outputs (adds `.gz` extension to `-o`).
+- `-q`, `--quality` Wheter to export the input quality value (if fastq) to the output.
 ##### Advanced options
 - `--first_stage_kmer`, `--k1` k-mer length used in the first stage of classification.
  Default: 6. Available options: `4, 5, 6`.
